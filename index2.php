@@ -22,9 +22,9 @@
                         <a href="index.php"><img src="imgs/logo.png" alt=""></a>
                     </div>
                         <div class="navbar-right">
-                            <a href="index.html" class="navbar-right-link">je suis éleve</a>
-                            <a href="connexion_prof.html" class="navbar-right-link">Connexion</a>
-                            <a href="connexion_Admin.html" class="navbar-right-link">Admin</a>
+                            <a href="index.php" class="navbar-right-link">je suis éleve</a>
+                            <a href="connexion_prof.php" class="navbar-right-link">Connexion</a>
+                            <a href="connexion_Admin.php" class="navbar-right-link">Admin</a>
                         </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         une génération meilleure!</h1>
                     <div class="buttons">
                         <a href="" class="btn-dsgn"><span> savoir plus</span></a>
-                        <a href="inscription_prof.html" class="btn-dsgn"><span> Inscription</span></a>
+                        <a href="inscription_prof.php" class="btn-dsgn"><span> Inscription</span></a>
                     </div>    
                 </div>
             </div>

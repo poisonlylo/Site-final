@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', 'root');
 
 
 
@@ -37,8 +37,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', '');
                     <div class="btn_deconnexion"> <a href="deconnexion.php"> Deconnexion </a></div>
                     <div class="transbox">
                         <div class="btns">
-                        <div class="btn"> <a href="message.php?"> Gérer les commentaire </a></div>
-                        <div class="btn"> <a href="gestionMembres.php?"> Gérer les membres </a></div>
+                        <div class="btn"> <a href="gestion_comments.php?"> Gérer les commentaire </a></div>
+                        <div class="btn"> <a href="gestion_membre.php?"> Gérer les membres </a></div>
                         </div>
                      </div>
                 </div>

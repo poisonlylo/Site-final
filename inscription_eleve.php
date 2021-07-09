@@ -1,19 +1,20 @@
-<!--<?php 
+<?php 
 
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', 'root');
 } catch (Exception $e) {
 
     die('Erreur: ' . $e->getMessage());
 }
 
+
     // verifier si le formulaire est bien envoye 
 if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
 {
     // verifier les champs sont pas vides 
-   if(!empty($_POST['nom1']) AND !empty($_POST['prenom']) AND !empty($_POST['email']) AND !empty($_POST['motdepasse']))
+   if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['email']) AND !empty($_POST['motdepasse']))
        {
-            $nom = htmlspecialchars($_POST['nom1']);
+            $nom = htmlspecialchars($_POST['nom']);
             $prenom = htmlspecialchars($_POST['prenom']);
             $email = htmlspecialchars($_POST['email']);
             $motdepasse = htmlspecialchars($_POST['motdepasse']);
@@ -24,7 +25,7 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
          $insertuser ->execute(array($nom,$prenom,$email,$motdepasse));
 
 
-         header("location: recherche.php");
+         header("location: connexion_eleve.php");
        }
 
 }
@@ -32,7 +33,7 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
       
 
 
-?>-->
+?>
 
 
 
@@ -55,11 +56,11 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
       <div class="navbar-backg-color">
           <div class="navbar">
               <div class="logo">
-                  <a href="index.html"><img src="imgs/logo.png" alt=""></a>
+                  <a href="index.php"><img src="imgs/logo.png" alt=""></a>
               </div>
                   <div class="navbar-right">
-                      <a href="index2.html" class="navbar-right-link">Je suis prof</a>
-                      <a href="index.html" class="navbar-right-link">Je suis eleve</a>
+                      <a href="index2.php" class="navbar-right-link">Je suis prof</a>
+                      <a href="index.php" class="navbar-right-link">Je suis eleve</a>
                   </div>
           </div>
       </div>
@@ -72,7 +73,7 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
             <h2 class="title">Inscription Elève</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" name="nom1" placeholder="Nom" />
+              <input type="text" name="nom" placeholder="Nom" />
             </div>
             <div class="input-field">
               <i class="fas fa-user"></i>

@@ -1,12 +1,9 @@
 <!--<?php 
-
 try {
-  $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', 'root');
 } catch (Exception $e) {
-
   die('Erreur: ' . $e->getMessage());
 }
-
   // verifier si le formulaire est bien envoye 
 if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
 {
@@ -21,21 +18,14 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
           $eDes = htmlspecialchars($_POST['eDes']);
           $Matiere = htmlspecialchars($_POST['Matiere']);
           $Niveau = htmlspecialchars($_POST['Niveau']);
-
-
           //inserer les donnees dans la table enseignant 
        $insertuser = $bdd-> prepare("INSERT INTO enseignant(Nom,Prenom,Email,MDP,Tel,eDes,Matiere,Niveau)values(?,?,?,?,?,?,?,?)"); 
        $insertuser ->execute(array($Nom,$Prenom,$Email,$MDP,$Tel,$eDes,$Matiere,$Niveau));
-
-
-       header("location: recherche.php");
+       header("location: connexion_prof.php");
      }
-
 }
              
     
-
-
 ?>-->
 
 
@@ -59,11 +49,11 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
     <div class="navbar-backg-color">
         <div class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="imgs/logo.png" alt=""></a>
+                <a href="index.php"><img src="imgs/logo.png" alt=""></a>
             </div>
                 <div class="navbar-right">
-                    <a href="index2.html" class="navbar-right-link">Je suis prof</a>
-                    <a href="index.html" class="navbar-right-link">Je suis eleve</a>
+                    <a href="index2.php" class="navbar-right-link">Je suis prof</a>
+                    <a href="index.php" class="navbar-right-link">Je suis eleve</a>
                 </div>
         </div>
     </div>
@@ -143,7 +133,7 @@ if(isset($_POST['submit'])){
           
           <div class="input-field descriptio">
             <i class="fas fa-phone"></i>
-            <input type="number"  name="Tel" placeholder="Tel" />
+            <input type="tel"  name="Tel" placeholder="Tel" />
           </div>
           <div class="input-field description">
             <i class="fas fa-envelope"></i>

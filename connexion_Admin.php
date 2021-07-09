@@ -1,7 +1,7 @@
 <?php
 session_start();
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', 'root');
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
@@ -19,7 +19,7 @@ if (isset($_POST['ok_connexion'])) {
             $userinfo = $requser->fetch();
             $_SESSION['id'] = $userinfo['id_admin'];
             $_SESSION['pseudo'] = $userinfo['pseudo_admin'];
-            header("Location: adminContent.php?id=" . $_SESSION['id']);
+            header("Location: admin_content.php?id=" . $_SESSION['id']);
         } else {
             $erreur = "E-mail ou mot de passe incorrect";
         }
@@ -43,8 +43,8 @@ if (isset($_POST['ok_connexion'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link rel="stylesheet" href="css/connexion_prof.css">
-    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="/css/connexion_admin.css">
+    <link rel="stylesheet" href="/css/main-style.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <title>Admin</title>
@@ -53,49 +53,37 @@ if (isset($_POST['ok_connexion'])) {
 
 
 
-<div class="header">
-    <div class="navbar-backg-color">
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="imgs/logo.png" alt=""></a>
-            </div>
-                <div class="navbar-right">
-                    <a href="index2.html" class="navbar-right-link">Je suis prof</a>
-                    <a href="index.html" class="navbar-right-link">Je suis eleve</a>
-                </div>
+    <header>
+        <div class="left_area">
+            <a href="../index.php">
+                <h3> PLATEFORME <span>L'ETUDIANT</span></h3>
+            </a>
         </div>
-    </div>
-  </div>
+    </header>
 
-  <div class="container">
-    <div class="forms-container">
-      <div class="signin-signup">
-        <form  method="POST" action="#" class="sign-in-form">
-          <h2 class="title admin">Connexion Administrateur</h2>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
+    <div class="content">
+       
+
+        <form action="#"class="box" method="POST">
+            <h1> Connexion Admin</h1>
             <input type="text" name="pseudo" placeholder="Pseudo">
-           </div> 
-           <div class="input-field">
-            <i class="fas fa-lock"></i>
             <input type="password" name="mdp" placeholder="mot de passe">
-            </div>
-            <input type="submit" name="ok_connexion" value="Connexion" class="btn solid">
+            <input type="submit" name="ok_connexion" value="Connexion">
 
 
-         <!--   <?php
+            <?php
             if (isset($erreur)) {
                 echo "<p style='color:red; text-align:center'>" . $erreur . "</p>";
             }
 
 
-            ?>-->
+            ?>
         </form>
+    
+    
+
     </div>
-  </div>
 
-
-</div>
 </body>
 
 </html>

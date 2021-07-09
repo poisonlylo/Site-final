@@ -1,3 +1,14 @@
+<?php
+session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', 'root');
+
+if (isset($_POST['delete'])) {
+    $m = $_POST['avis'];
+    $delmsg = $bdd->prepare("DELETE FROM commentaire WHERE avis = ?");
+    $delmsg->execute(array($m));
+    header('Location:gestion_comments.php');
+}
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +23,7 @@
 </head>
 <body>
     <header>
-        <div class="btn1"> <a  style="color: white;"> <b> Précédent </b></a></div>
+        <div class="btn1"> <a href="admin_content.php"  style="color: white;"> <b> Précédent </b></a></div>
     </header>
     <div class="box">
         <table class="myTable ">
@@ -20,40 +31,40 @@
                 <th class="email"> <b>Commentaire</b></th>
                     <th> <b>Action</b></th>
             </tr>
+            <?php
+             $select_all_members = $bdd->query('SELECT * FROM commentaire ');
+                if ($select_all_members->rowCount() > 0) {
+                    while ($m = $select_all_members->fetch()) { 
+            ?>
             <tr>
                 <th>
                 <div class="comment">
-                    <h2>Tibiche lyes</h2>
-                    <h5>ce prof est con</h5>
+                <h2 > <?= $m['nom']; ?> <?= $m['prenom']; ?> </h2>
+                <h5 > <?= $m['avis']; ?> </h5>
                 </div>
-            </th>
-            <th>
+                </th>
+                <th>
                 <div class="suppMessage">
                     <form action="" method="post">
-                        <input type="text" style="display: none;" value="<?= $m['Email'] ?>" name="Email">
+                        <input type="text" style="display: none;" value="<?= $m['avis'] ?>" name="avis">
                         <input type="submit" value="Supprimer " class="delete btn" name="delete">
                     </form>
                    
                 </div>
-            </th>
-            </tr>
-            <tr>
-                <th>
-                <div class="comment">
-                    <h2>Tibiche lyes</h2>
-                    <h5>walah j'rigole</h5>
-                </div>
-            </th>
+                </th>
+            <?php
+             
+           
+                    }
+                } else {
+                    echo "aucun commentaire trouver ! ";
+                }
+                ?>
             <th>
-                <div class="suppMessage">
-                    <form action="" method="post">
-                        <input type="text" style="display: none;" value="<?= $m['Email'] ?>" name="Email">
-                        <input type="submit" value="Supprimer " class="delete btn" name="delete">
-                    </form>
-                   
-                </div>
+                
             </th>
             </tr>
+        
         </table>
     </div>
 </body>

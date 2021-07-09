@@ -1,9 +1,9 @@
-<!--<?php
+<?php
 session_start();
 
 try {
 
-    $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', 'root');
 } catch (Exception $e) {
 
     die('Erreur: ' . $e->getMessage());
@@ -22,12 +22,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST['submit1']))
                $userexist = $requser->rowCount();
                      // verifier si l etudiant existe
                       if($userexist == true)
-                      {
+                      { $userinfo = $requser->fetch();
+                        $_SESSION['id'] = $userinfo['id_etudiant'];
+                        $_SESSION['pseudo'] = $userinfo['nom'];
+                        $_SESSION['mail'] = $userinfo['email'];
                        
                         
                          // url vers la page recherche
-                        header("Location: recherche.php");
-                                                        
+                         header("Location: recherche.php?id=" . $_SESSION['id']);
                       } 
                       else
                       {  
@@ -47,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST['submit1']))
  }
 
 
-?>-->
+?>
 
 
 
@@ -68,11 +70,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST['submit1']))
       <div class="navbar-backg-color">
           <div class="navbar">
               <div class="logo">
-                  <a href="index.html"><img src="imgs/logo.png" alt=""></a>
+                  <a href="index.php"><img src="imgs/logo.png" alt=""></a>
               </div>
                   <div class="navbar-right">
-                      <a href="index2.html" class="navbar-right-link">Je suis prof</a>
-                      <a href="index.html" class="navbar-right-link">Je suis eleve</a>
+                      <a href="index2.php" class="navbar-right-link">Je suis prof</a>
+                      <a href="index.php" class="navbar-right-link">Je suis eleve</a>
                   </div>
           </div>
       </div>
@@ -93,11 +95,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST['submit1']))
             </div>
             <input type="submit" value="Se connecter" name ="submit1" class="btn solid" /> 
 
-           <!-- <?php if (isset($erreur)) {
+           <?php if (isset($erreur)) {
                echo "<p style='color:red; text-align:center'>".$erreur."</p>";
             }
             
-            ?>-->
+            ?>
            
 
           </form>

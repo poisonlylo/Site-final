@@ -19,12 +19,12 @@
             <div class="navbar-backg-color">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="index.html"><img src="imgs/logo.png" alt=""></a>
+                        <a href="index.php"><img src="imgs/logo.png" alt=""></a>
                     </div>
                         <div class="navbar-right">
-                            <a href="index2.html" class="navbar-right-link">Je suis prof</a>
-                            <a href="connexion_eleve.html" class="navbar-right-link">Connexion</a>
-                            <a href="connexion_Admin.html" class="navbar-right-link">Admin</a>
+                            <a href="index2.php" class="navbar-right-link">Je suis prof</a>
+                            <a href="connexion_eleve.php" class="navbar-right-link">Connexion</a>
+                            <a href="connexion_Admin.php" class="navbar-right-link">Admin</a>
                         </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                         enseignants de chez vous !</h1>
                     <div class="buttons">
                         <a href="" class="btn-dsgn"><span> savoir plus</span></a>
-                        <a href="inscription_eleve.html" class="btn-dsgn"><span> Inscription</span></a>
+                        <a href="inscription_eleve.php" class="btn-dsgn"><span> Inscription</span></a>
                     </div>    
                 </div>
                 <img src="imgs/image-presentation.png" alt="image presentation">
