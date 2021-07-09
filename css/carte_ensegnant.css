@@ -1,0 +1,145 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #6CA2C5;
+
+}
+.carte{
+    width: 70%;
+    height: 90%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(20% , 6%); 
+}
+.informations{
+    width: 100%;
+    height: 20%;
+    display: flex;
+ 
+    flex-direction: row;
+    border-radius: 30px;
+
+}
+.left_side{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    
+}
+.left_side h1{
+    font-size: 30px;
+    margin-top: 40px;
+}
+.left_side h2{
+    font-size:20px ;
+    color: gray;
+    margin-left: 30px;
+    margin-top: -10px;
+}
+.left_side h3{
+    font-size: 15px;
+    margin-left: 40px;
+    margin-top: -15px;
+
+}
+.v-line{
+    margin-top: 20px;
+      border-left: 2px solid #777575;
+      height: 100px;
+    }
+.right_side{
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+
+} 
+.box{
+    display: flex;
+    flex-direction: row;
+}  
+.presentation{
+ 
+    text-align: center;
+    margin-top: 40px;
+}
+.commentaires{
+    margin-left: 300px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+
+}
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+  }
+  
+  .input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+  }
+  
+  .input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+  }
+  .btn {
+    width: 150px;
+    background-color:#6CA2C5 ;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-left: 30px;
+  }
+  
+  .btn:hover {
+    background-color:#4691c4 ;
+  }
+  .comments h2{
+      text-align: center;
+  }
+
+  .boite {
+      margin-left: 290px;
+   width: 400px;
+   height: 40px;
+   border-radius: 20px;
+   background-color: gray;
+  }
+  .boite h4{
+      margin-left: 10px;
+      padding:10px 20px;
+  }
+

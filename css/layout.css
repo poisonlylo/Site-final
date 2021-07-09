@@ -1,27 +1,34 @@
 .header-plus-image{
     width: 100%;
-    height:750px;
+    height:100vh;
+    background-color: #6CA2C5;
 }
 .header{
   
     width: 100%;
-    height:85%;
+    height:100%;
     position: absolute;
     top: 0;
     right: 0;
 }
 .img-header{
     position: relative;
+    background-color: black;
+
+    
+    
 }
 .img-header img {
     height: 100%;
     width: 100% ;
+
 }
 .navbar-backg-color{
   position: fixed;
     width: 100%;
     height: 80px;
     background-color:white;
+    z-index: 100;
 }
 .navbar{
     width: 90%;
@@ -31,6 +38,28 @@
     justify-content: space-between;
     align-items: center;
     margin: auto;
+  
+}
+.custom-shape-divider-bottom-1625496815 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1625496815 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+  
+}
+
+.custom-shape-divider-bottom-1625496815 .shape-fill {
+  fill: #FFFFFF;
 }
 .logo img{
     width: 75px;
@@ -61,7 +90,7 @@
 /* ------------------- NAVBAR-FIXED-SCROLLING -------------------*/
 .navbar-backg-color.stikky{
   height: 70px;
-  background-color: #BEBDB6;
+  background-color: #3E779C;
   transition: 0.3s;
 }
 .navbar-right.stikky  a{
@@ -80,19 +109,84 @@
   transition: width .3s;
 }
 /* -------------------  -------------------*/
+.header-second-part{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  margin-top: 160px;
 
+
+}
+.header-second-part img{
+  width: 50%;
+  
+}
 .presentation{  
-    width: 45%;
-    height: 60%;
-    margin-top: 160px;
-    margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40%;
+  height: 100%; 
+  
 }
 .presentation h1{
-    font-size: 50px;
+    font-size: 45px;
     color: white;
+}
+.buttons{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  
 }
 
 
+/*------------------------buttons animation------------------------*/
+.btn-dsgn {
+ 
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+
+  padding: 10px 30px;
+  border-radius: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn-dsgn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-dsgn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn-dsgn:hover span {
+  padding-right: 25px;
+}
+
+.btn-dsgn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*--------------------------------------------*/
 
 /*second and third page*/
 

@@ -1,0 +1,101 @@
+<?php
+session_start();
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', '');
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+
+if (isset($_POST['ok_connexion'])) {
+    $pseudoconnect = htmlspecialchars($_POST['pseudo']);
+    $mdpconnect = $_POST['mdp'];
+    if (!empty($pseudoconnect) and !empty($mdpconnect)) {
+        $requser = $bdd->prepare("SELECT * FROM admin WHERE pseudo_admin = ? AND pass_admin = ?");
+        $requser->execute(array($pseudoconnect, $mdpconnect));
+        $userexist = $requser->rowCount();
+        $userexist = $requser->rowCount();
+        if ($userexist == 1) {
+            $userinfo = $requser->fetch();
+            $_SESSION['id'] = $userinfo['id_admin'];
+            $_SESSION['pseudo'] = $userinfo['pseudo_admin'];
+            header("Location: adminContent.php?id=" . $_SESSION['id']);
+        } else {
+            $erreur = "E-mail ou mot de passe incorrect";
+        }
+    } else {
+        $erreur = "Tous les champs doivent être remplis";
+    }
+}
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/connexion_prof.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <title>Admin</title>
+
+</head>
+
+
+
+<div class="header">
+    <div class="navbar-backg-color">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="imgs/logo.png" alt=""></a>
+            </div>
+                <div class="navbar-right">
+                    <a href="index2.html" class="navbar-right-link">Je suis prof</a>
+                    <a href="index.html" class="navbar-right-link">Je suis eleve</a>
+                </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form  method="POST" action="#" class="sign-in-form">
+          <h2 class="title admin">Connexion Administrateur</h2>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" name="pseudo" placeholder="Pseudo">
+           </div> 
+           <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="mdp" placeholder="mot de passe">
+            </div>
+            <input type="submit" name="ok_connexion" value="Connexion" class="btn solid">
+
+
+         <!--   <?php
+            if (isset($erreur)) {
+                echo "<p style='color:red; text-align:center'>" . $erreur . "</p>";
+            }
+
+
+            ?>-->
+        </form>
+    </div>
+  </div>
+
+
+</div>
+</body>
+
+</html>

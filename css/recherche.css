@@ -1,7 +1,7 @@
 html {
   font-size: 50.5%;
   font-family: 'Nunito', sans-serif;
-  background-color: #EAEAEA;
+  background-color: #6CA2C5;
 }
 *{
     padding: 0;
@@ -44,18 +44,7 @@ html {
   font-weight: bold;
   border-radius: 40px;
 }
-.dropdown__select {
-  border-radius: inherit;
-}
-.dropdown__list {
-  margin-top: 1.5rem;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  display: none;
-  
-}
+
 .dropdown__item a{
     text-decoration: none;
     color: black;
