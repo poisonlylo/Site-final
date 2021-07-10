@@ -1,4 +1,4 @@
-<!--<?php 
+<?php 
 try {
   $bdd = new PDO('mysql:host=localhost;dbname=study;charset=utf8', 'root', 'root');
 } catch (Exception $e) {
@@ -26,7 +26,7 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
 }
              
     
-?>-->
+?>
 
 
 
@@ -116,6 +116,12 @@ if ( isset($_POST['forminscription']) and $_SERVER["REQUEST_METHOD"] == "POST" )
                   <option value="Mathematique">Mathematique</option>
                   <option value="Physique">Physique</option>
                   <option value="Anglais">Anglais</option>
+                  <option value="Français">Français</option>
+                  <option value="Philosophie">Philosophie</option>
+                  <option value="Histoire geographie">Histoire geographie</option>
+                  <option value="Sciences">Sciences</option>
+                  <option value="Thamazight">Thamazight</option>
+                  
               </select>
             </td>
         <!--  <?php

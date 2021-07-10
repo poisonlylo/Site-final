@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST['submit1']))
                       $_SESSION['pseudo'] = $userinfo['Nom'];
                       $_SESSION['matiere'] = $userinfo['Matiere'];
                       $_SESSION['mail'] = $userinfo['Email'];
-                     
+                     session_start();
                       
                        // url vers la page recherche
                       header("Location: profil_enseigant.php?id=" . $_SESSION['id']);

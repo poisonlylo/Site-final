@@ -65,6 +65,14 @@
  
     text-align: center;
     margin-top: 40px;
+    width: 90%;
+    height: 30%;
+    margin-left: 50px;
+
+}
+.presentation p{
+    font-size: 18px;
+    
 }
 .commentaires{
     margin-left: 300px;
@@ -142,4 +150,24 @@
       margin-left: 10px;
       padding:10px 20px;
   }
+  .comments{
+      margin-top: 50px;
+      text-align: center;
+  }
+  .comments a{
+      
+      text-decoration: none;
+      padding: 13px 25px;
+      background-color: #6CA2C5;
+      color: white;
+      border-radius: 15px;
+  }
+  .inpt{
+      margin-top:18px ;
+  }
+  .solid{
+    margin-left: 400px;
+    margin-top: -300px;
+ 
+}
 

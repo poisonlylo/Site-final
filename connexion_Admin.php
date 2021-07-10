@@ -43,23 +43,31 @@ if (isset($_POST['ok_connexion'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link rel="stylesheet" href="/css/connexion_admin.css">
-    <link rel="stylesheet" href="/css/main-style.css">
+    <link rel="stylesheet" href="css/connexion_admin.css?v=<?php echo time(); ?>">
+
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <title>Admin</title>
 
 </head>
 
+<body>
+    
+<div class="header">
+      <div class="navbar-backg-color">
+          <div class="navbar">
+              <div class="logo">
+                  <a href="index.php"><img src="imgs/logo.png" alt=""></a>
+              </div>
+                  <div class="navbar-right">
+                      <a href="index2.php" class="navbar-right-link">Je suis prof</a>
+                      <a href="index.php" class="navbar-right-link">Je suis eleve</a>
+                  </div>
+          </div>
+      </div>
+    </div>
 
-
-    <header>
-        <div class="left_area">
-            <a href="../index.php">
-                <h3> PLATEFORME <span>L'ETUDIANT</span></h3>
-            </a>
-        </div>
-    </header>
+  
 
     <div class="content">
        
@@ -82,7 +90,8 @@ if (isset($_POST['ok_connexion'])) {
     
     
 
-    </div>
+
+    </div>    
 
 </body>
 

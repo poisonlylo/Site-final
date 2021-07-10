@@ -1,3 +1,4 @@
+
 <?php
 session_start();
  $bdd = new PDO('mysql:host=localhost;dbname=study;', 'root', 'root');
@@ -102,12 +103,11 @@ if( isset($_POST['eDes']) )
                 <h3><?= $userinfo['Matiere'] ?></h3>
             </div>
             <div class="modifier">
-                <h1>Modifier</h1>
-                <a href="" class="link">Description</a>
-                
-                <a href="" class="link">Numero de tel</a>
-                <a href="" class="link">Email</a>
-                <a href="" class="link">Nom</a>
+                <h1>Infos personnels</h1>
+                <div class="num">
+                            <i></i>
+                            <h2><?= $userinfo['Tel'] ?></h2>
+                        </div>
              </div>
         </div>
         <div class="right_side">
@@ -126,6 +126,7 @@ if( isset($_POST['eDes']) )
 
                     </div>
                     <div class="box box2">
+                        
                         <div class="num">
                             <i></i>
                             <h2><?= $userinfo['Tel'] ?></h2>
@@ -195,13 +196,13 @@ if(isset($_POST['submit'])){
                             <input type="text" name="Email"  value="<?= $userinfo['Email'] ?>"/>  
                             <input type="password" name="MDP"  > 
                             <input type="text" name="eDes"  value="<?= $userinfo['eDes'] ?>"/>  
-                            <input type="submit"  value="Update">
+                            <input type="submit"  value="modifier">
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="btn_comments">
-                    <a href="">Voir les commentaires</a>
+                    <a href="prof_comments.php">Voir les commentaires</a>
                 </div>
             </div>
         </div>

@@ -74,8 +74,9 @@ scolaires et améliorer leurs capacités intellectuelles.
         <div  class="c">
         <img src="imgs/photo2.svg" alt="matiere" > 
          <div class="c2">
-        <h2 class="c3"> 2.Séléctionnez votre matière </h2><br>
-        <p>Cliquez sur la barre de recherche et <br> sélectionnez la matière</p>
+        <h2 class="c3"> 2-Remplissez le formulaire
+ </h2><br>
+       
          </div>
        </div>
 
@@ -84,19 +85,14 @@ scolaires et améliorer leurs capacités intellectuelles.
       
        <div  class="c4">
            <div class="c5">
-       <h2 class="c6"> 3.Choisissez votre enseignant </h2><br>
-      <p>Choisissez l’enseignant qui vous convient <br> parmi toutes les propositions </p>
+       <h2 class="c6"> 3-Validez pour créer votre profil
+ </h2><br>
+      
         </div>
       <img src="imgs/photo3.svg" alt="enseignant">
       </div>
 
-      <div class="c7">
-        <div class="c11"><img src="imgs/photo4.svg" alt="contacter l'enseignant">
-        </div>
-            <div class="c8">
-       <h2 class="c9"> 4.Contactez-le ! </h2><br>
-       <p> Contactez l’enseignant que vous avez choisi </p>
-     </div>
+    
     </div>
     <br>
     </div>
